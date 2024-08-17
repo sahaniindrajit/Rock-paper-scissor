@@ -1,9 +1,9 @@
-let score=JSON.parse(localStorage.getItem('score'));
+let score = JSON.parse(localStorage.getItem('score'));
 
-if(score==null){
-  score={
-    wins:0,
-    losses:0,
+if (score == null) {
+  score = {
+    wins: 0,
+    losses: 0,
     Ties: 0
   };
 }
@@ -34,7 +34,7 @@ function playGame(playerMove) {
     } else if (computerMove === 'scissors') {
       result = 'You lose.';
     }
-    
+
   } else if (playerMove === 'rock') {
     if (computerMove === 'rock') {
       result = 'Tie.';
@@ -45,40 +45,40 @@ function playGame(playerMove) {
     }
   }
 
-  if(result=='You win.'){
-    score.wins+=1;
+  if (result == 'You win.') {
+    score.wins += 1;
   }
-  else if(result=='You lose.'){
-    score.losses+=1;
+  else if (result == 'You lose.') {
+    score.losses += 1;
   }
-  else if(result=='Tie.'){
-    score.Ties+=1;
+  else if (result == 'Tie.') {
+    score.Ties += 1;
   }
 
   updateScore();
 
   updateResult(result);
 
-  updateMoves(playerMove,computerMove);
+  updateMoves(playerMove, computerMove);
 
-  localStorage.setItem('score',JSON.stringify(score));
+  localStorage.setItem('score', JSON.stringify(score));
 
 
-  
+
 }
 
-function updateScore(){
-  document.querySelector('.js-score').innerHTML=`Wins:${score.wins} ,Losses:${score.losses} , Ties:${score.Ties}`;
+function updateScore() {
+  document.querySelector('.js-score').innerHTML = `Wins:${score.wins} ,Losses:${score.losses} , Ties:${score.Ties}`;
 }
 
-function updateResult(result){
-  document.querySelector('.js-result').innerHTML=`${result}`;
+function updateResult(result) {
+  document.querySelector('.js-result').innerHTML = `${result}`;
 }
 
-function updateMoves(playerMove,computerMove){
-  document.querySelector('.js-moves').innerHTML=`You: <img src="../Images/${playerMove}-emoji.png" class="move-icon">
+function updateMoves(playerMove, computerMove) {
+  document.querySelector('.js-moves').innerHTML = `You: <img src="./Images/${playerMove}-emoji.png" class="move-icon">
 
-  Computer: <img src="../Images/${computerMove}-emoji.png" class="move-icon">`;
+  Computer: <img src="./Images/${computerMove}-emoji.png" class="move-icon">`;
 }
 
 function pickComputerMove() {
