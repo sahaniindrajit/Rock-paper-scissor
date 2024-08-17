@@ -1,0 +1,53 @@
+body{
+  background-color:rgb(25,25,25);
+  color: white;
+  font-family: arial;
+  
+}
+
+.content{
+  display: flex;
+  justify-content: center; /* Aligns horizontally */
+  align-items: center;
+  flex-direction: column;
+}
+
+.contentRow{
+  display:flex;
+  flex-direction: row;
+  padding-top: 5px;
+}
+.p1{
+  font-weight: bold;
+  font-size: 30px;
+
+}
+.move-icon{
+  height: 50px;
+}
+
+.move-button{
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.result{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top:50px;
+
+}
+.score{
+  margin-top: 55px;
+}
+.Reset-score-button{
+  background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
